@@ -1,27 +1,31 @@
 import React from "react";
 import {
-  SafeAreaView,
+  TouchableOpacity,
   ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   View,
 } from "react-native";
+import LinearGradient from 'react-native-linear-gradient';
 
 const App = () => {
   return (
     <View style={styles.container}>
       <ScrollView>
         <View style={styles.borderContainer}>
-          <View style={styles.headerContainer}>
+            <LinearGradient
+              colors={["#dbb637", "#f1e3b3"]}
+              style={styles.headerContainer}>
             <Text style={styles.mainHeader}>Green Creative</Text>
             <Text style={styles.subHeader}>
               Inspired by Creative Commons, licensed under Creative Commons.
             </Text>
-          </View>
+            </LinearGradient>
+
           <ScrollView>
-            <View style={styles.navBar}>
+            <LinearGradient
+              colors={['#836b18', '#d7b336']}
+              style={styles.navBar}>
               <Text style={styles.navText}>home</Text>
               <Text style={styles.navText}>about</Text>
               <Text style={styles.navText}>portfolio</Text>
@@ -29,12 +33,13 @@ const App = () => {
               <Text style={styles.navText}>products</Text>
               <Text style={styles.navText}>faq</Text>
               <Text style={styles.navText}>contact</Text>
-            </View>
+            </LinearGradient>
           </ScrollView>
           <View style={styles.section}>
-            <View style={styles.sectionHeader}>
+            <LinearGradient
+              colors={['#e9f0e8', '#ffffff']} style={styles.sectionHeader}>
               <Text style={styles.sectionHeaderText}>Template Usage</Text>
-            </View>
+            </LinearGradient>
             <View style={styles.sectionDetails}>
               <Text style={styles.sectionDetailsText}>
                 You may use this template on any site, anywhere, for free just please leave the link back to me in the
@@ -49,11 +54,11 @@ const App = () => {
               </Text>
             </View>
           </View>
-
           <View style={styles.section}>
-            <View style={styles.sectionHeader}>
+            <LinearGradient
+              colors={['#e9f0e8', '#ffffff']} style={styles.sectionHeader}>
               <Text style={styles.sectionHeaderText}>Another Title Goes Here!</Text>
-            </View>
+            </LinearGradient>
             <View style={styles.sectionDetails}>
               <Text style={styles.sectionDetailsText}>
                 This particular template goes not have a naviagation panel; it was intended for simple sites. I am also
@@ -63,9 +68,10 @@ const App = () => {
           </View>
 
           <View style={styles.section}>
-            <View style={styles.sectionHeader}>
+            <LinearGradient
+              colors={['#e9f0e8', '#ffffff']} style={styles.sectionHeader}>
               <Text style={styles.sectionHeaderText}>Yet Another?</Text>
-            </View>
+            </LinearGradient>
             <View style={styles.sectionDetails}>
               <Text style={styles.sectionDetailsText}>
                 Each title is an H1 tag, so choose them carefully :)
@@ -136,6 +142,10 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 28,
     marginBottom: 18,
+  },
+  box: {
+    width: '100%',
+    height: 200,
   },
 });
 export default App;
