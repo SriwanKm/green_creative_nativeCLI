@@ -94,12 +94,14 @@ const styles = StyleSheet.create({
     flex: 1,
     borderColor: "#bfd3b7",
     borderWidth: 8,
-    borderRadius: 10,
-    backgroundColor: "blue",
+    borderRadius: 50,
+    backgroundColor: "#ffffff",
   },
   headerContainer: {
-    backgroundColor: "#dcb93e",
-    padding: 10,
+    padding: 18,
+    paddingBottom: 20,
+    borderTopRightRadius: 40,
+    borderTopLeftRadius: 40,
   },
   mainHeader: {
     color: "#293823",
@@ -112,7 +114,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   navBar: {
-    backgroundColor: "#836b18",
     padding: 2,
     paddingHorizontal: 10,
     flexDirection: "row",
@@ -125,6 +126,8 @@ const styles = StyleSheet.create({
   section: {
     backgroundColor: "#ffffff",
     padding: 14,
+    borderBottomRightRadius: 40,
+    borderBottomLeftRadius: 40,
   },
   sectionHeader: {
     backgroundColor: "#ebf1ea",
@@ -142,10 +145,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 28,
     marginBottom: 18,
-  },
-  box: {
-    width: '100%',
-    height: 200,
   },
 });
 export default App;
