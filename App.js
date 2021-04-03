@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   TouchableOpacity,
+  FlatList,
   ScrollView,
   StyleSheet,
   Text,
@@ -22,33 +23,31 @@ const App = () => {
             </Text>
           </LinearGradient>
 
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            <LinearGradient
-              colors={['#836b18', '#d7b336']}
-              style={styles.navBar}>
-              <TouchableOpacity>
-                <Text style={styles.navText}>home</Text>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <Text style={styles.navText}>about</Text>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <Text style={styles.navText}>portfolio</Text>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <Text style={styles.navText}>prices</Text>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <Text style={styles.navText}>products</Text>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <Text style={styles.navText}>faq</Text>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <Text style={styles.navText}>contact</Text>
-              </TouchableOpacity>
+          <View style={styles.navBar}>
+            <LinearGradient colors={['#836b18', '#d7b336']} style={{flex: 1}}>
+              <FlatList
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                style={{flex: 1}}
+                data={[
+                  {key: 'home'},
+                  {key: 'about'},
+                  {key: 'portfolio'},
+                  {key: 'prices'},
+                  {key: 'products'},
+                  {key: 'faq'},
+                  {key: 'contact'},
+                ]}
+                renderItem={({item}) => (
+                  <View style={styles.navItem}>
+                    <TouchableOpacity>
+                      <Text style={styles.navText}>{item.key}</Text>
+                    </TouchableOpacity>
+                  </View>
+                )}
+              />
             </LinearGradient>
-          </ScrollView>
+          </View>
           <View style={styles.section}>
             <LinearGradient
               colors={['#e9f0e8', '#ffffff']}
@@ -144,18 +143,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   navBar: {
-    padding: 2,
-    paddingHorizontal: 10,
-    flexDirection: 'row',
+    flex: 1,
+    justifyContent: 'space-evenly',
   },
   navText: {
+    flex: 1,
     color: '#fafcf9',
-    padding: 15,
-    fontWeight: 'bold',
-  },
-  navTextActive: {
-    color: '#bfd3b7',
-    padding: 15,
+    paddingVertical: 15,
+    paddingHorizontal: 35,
     fontWeight: 'bold',
   },
   section: {
@@ -184,6 +179,9 @@ const styles = StyleSheet.create({
   readMore: {
     fontSize: 14,
     marginTop: 20,
+  },
+  navItem: {
+    flex: 1,
   },
 });
 export default App;
